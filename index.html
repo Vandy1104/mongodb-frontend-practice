@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mongodb-frontend-practice</title>
+  </head>
+  <body class="container">
+    <div class="container text-center">
+      <h1 class="jumbotron bg-light text-dark text-center">Mongodb-Frontend-Practice</h1>
+
+      <button id="homeBtn" type="button" class="btn btn-dark rounded-pill mr-20px">Home</button>
+      <button id="adminBtn" type="button" class="btn btn-dark rounded-pill mr-20px">Admin</button>
+
+      <!-- Home Page -->
+      <div id="homePage">
+      <button id="viewProductsBtn" type="button" class="btn btn-dark rounded-pill mr-20px">View all Products</button>
+
+      <div id=productCards class="row"></div>
+    </div>
+
+      <!-- Admin page -->
+        <div id="adminPage">
+            <button id="loginBtn" type="button" class="btn btn-dark rounded-pill mr-20px">Login</button>
+            <button id="logoutBtn" type="button" class="btn btn-dark rounded-pill mr-20px">Logout</button>
+            <button id="registerBtn" type="button" class="btn btn-dark rounded-pill mr-20px">Register</button>
+            <button id="viewUserBtn" type="button" class="btn btn-dark rounded-pill mr-20px">View all users</button>
+        </div>
+
+      </div>
+
+      <script src="node_modules\jquery\dist\jquery.min.js"></script>
+      <script src="node_modules\@popperjs\core\dist\umd\popper.min.js"></script>
+      <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+      <script src="js/script.js"></script>
+  </body>
+</html>
