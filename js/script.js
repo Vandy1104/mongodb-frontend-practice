@@ -1,10 +1,11 @@
 console.log('Mongodb-frontend-practice');
 
 $( document ).ready(function() {
-  //$('body').click(function(){
-    //$(this).css('background','pink');
-  //}); //jquery testing
+  $('body').click(function(){
+    $(this).css('background','pink');
+  }); //jquery testing
 
+$('#loginForm').hide();
 $('#adminPage').hide();
 $('#adminBtn').click(function(){
   $('#adminPage').show();
@@ -14,6 +15,10 @@ $('#adminBtn').click(function(){
 $('#homeBtn').click(function(){
   $('#adminPage').hide();
   $('#homePage').show();
+});
+
+$('#loginBtn').click(function(){
+  $('#loginForm').show();
 });
 
 //get url and port from config.json
@@ -60,9 +65,7 @@ $('#viewProductsBtn').click(function(){
         <h3 class=""> ${productsFromMongo[i].name}</h3>
         <h4 class=""> ${productsFromMongo[i].price}</h4>
         </div>`;
-
       }
-
 
     },//success
         error:function(){
