@@ -25,7 +25,7 @@
             <button id="loginBtn" type="button" class="btn btn-dark rounded-pill mt-5">Login</button>
             <button id="logoutBtn" type="button" class="btn btn-dark rounded-pill mt-5">Logout</button>
             <button id="registerBtn" type="button" class="btn btn-dark rounded-pill mt-5">Register</button>
-
+            <button id="viewUserBtn" type="button" class="btn btn-dark rounded-pill mt-5">View all users</button>
 
             <!-- Login form -->
            <form id="loginForm" class="bg-dark text-white mt-5 p-3">
@@ -33,11 +33,35 @@
              <input id="username" name="username" type="text" class="form-control mb-3" placeholder="username" value="">
 
              <label for="password">Password:</label>
-             <input id="password" type="password" name="password" class="form-control mb-3" placeholder="password" value="">
+             <input id="password" type="password" name="password" class="form-control mb-3" placeholder="password">
                <button id="submit" class="btn btn-large btn-success mb-3">Login</button><br>
            </form>
 
-           <button id="viewUserBtn" type="button" class="btn btn-dark rounded-pill mt-5">View all users</button>
+           <!-- <form action="/loginUser" method="post"> -->
+         <form id="registerForm" class="bg-light mt-5 py-3 px-3">
+           <div class="form-group">
+             <label for="r-username">Username</label>
+             <input id="r-username"  type="text" name="r-username" class="form-control" aria-describedby="emailHelp">
+             <!-- <small id="emailHelp"  class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+           </div>
+           <div class="form-group">
+             <label for="r-email">Email</label>
+             <input id="r-email" type="email" autocomplete="new-password" name="r-email" class="form-control">
+           </div>
+           <div class="form-group">
+             <label for="r-password">Password</label>
+             <input id="r-password" type="password" autocomplete="new-password" name="r-password" class="form-control">
+           </div>
+           <!-- <div class="form-group form-check">
+             <input type="checkbox" class="form-check-input" id="exampleCheck1">
+             <label class="form-check-label" for="exampleCheck1">Check me out</label>
+           </div> -->
+           <button id="r-submit" name="r-button" type="submit" class="btn btn-primary">Submit</button>
+
+         </form>
+         <!-- RegisterForm ends here -->
+
+
 
         </div>
 
