@@ -12,6 +12,8 @@ if(sessionStorage['userName']) {
     //$(this).css('background','pink');
   }); //jquery testing
 
+$('#addProdForm').hide();
+$('#prodForm').hide();
 $('#loginForm').hide();
 $('#logoutBtn').hide();
 $('#adminPage').hide();
@@ -31,9 +33,19 @@ $('#loginBtn').click(function(){
   $('#loginForm').show();
 });
 
+$('#updateProductsBtn').click(function(){
+      $('#addProdForm').hide();
+      $('#prodForm').show();
+  });
+
 $('#registerBtn').click(function(){
   $('#registerForm').show();
 });
+
+$('#addProductsBtn').click(function(){
+  $('#prodForm').hide();
+  $('#addProdForm').show();
+  });
 
 //get url and port from config.json
 $.ajax({
@@ -88,6 +100,66 @@ $('#viewProductsBtn').click(function(){
 
       }); //Ajax
       });//View Products Button
+
+      // Update products
+      $('#prodForm').submit(function(){
+        event.preventDefault();
+        let prodId = $('#prodId').val();
+        let prodName = $('#prodName').val();
+        let prodPrice = $('#prodPrice').val();
+        let uId = $('#uId').val();
+        console.log(prodId,prodName,prodPrice,uId);
+        $.ajax({
+          url :`${url}/updateProduct/${prodId}`,
+          type :'PATCH',
+          data:{
+            // _id : prodId,
+            name : prodName,
+            price: prodPrice,
+            userId: uId
+            },
+          success : function(data){
+            console.log(data);
+          },//success
+          error:function(){
+            console.log('error: cannot call api');
+          }//error
+
+
+        });//ajax
+
+      });//submit function for Update product
+
+      // Add a product
+	// $('#addProductForm').submit(function(){
+	// 	event.preventDefault();
+  //
+ 	// 	let productName = $('#addProdName').val();
+	// 	let productPrice = $('#addProdPrice').val();
+	// 	let productQuantity = $('#addProdQuantity').val();
+	// 	let userId = sessionStorage.getItem('userId');
+  //
+	// 	console.log(productName, productPrice, userId);
+  //
+	// 	$.ajax({
+	// 		url : `${url}/addProduct`,
+	// 		type : 'POST',
+	// 		data : {
+	// 			productName : productName ,
+	// 			quantity : productQuantity ,
+	// 			price : productPrice ,
+	// 			user_id : userId
+	// 		},
+	// 		success : function(data){
+  //
+	// 		},
+	// 		error : function(){
+	// 			alert('error: ')
+	// 		}  //Error
+	// 	});  //Ajax
+	// });  //submit function for Update product
+
+
 
 
   $('#loginForm').submit(function(){
